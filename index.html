@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Dave Stickmin Collection</title>
+        <link rel="icon" type="image/ico" href="images/logo.ico">
+        <script src="cookies.js"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+            body{
+                background: linear-gradient(#72abe9,#29578c) no-repeat fixed;
+                overflow: hidden;
+            }
+            img{
+                user-select: none;
+            }
+            .button{
+                position: relative;
+                background-color: white;
+                font-size: 35px;
+                width: 25vh;
+                height: 6.5vh;
+                font-family: 'Poppins', sans-serif;
+                text-align: center;
+                border-radius: 20px;
+                border-style: solid;
+                margin-top: 60px;
+                text-decoration: none;
+                color: black;
+                transition: all 1s ease-in-out;
+            }
+            .button:hover{
+                transform: scale(1.15);
+            }
+            section{
+                align-items: center;
+                position: absolute;
+                display: flex;
+                width: 100%;
+                top: 15vh;
+                flex-direction: column;
+            }
+
+            .logo{
+                position: relative;
+                animation: move 5s infinite;
+            }
+            @keyframes move{
+                0%{
+                    bottom: 0px;
+                }
+                50%{
+                    bottom: 15px;
+                }
+                100%{
+                    bottom: 0px;
+                }
+            }
+            form{
+                font-size: 20px;
+                background: white;
+                width: 65vh;
+                height: 30vh;
+                font-family: 'Poppins', sans-serif;
+                padding: 35px 35px 25px 35px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #signup{
+                top: 30%;
+                display: none;
+            }
+            input{
+                width: 450px;
+                height: 50px;
+                border-radius: 20px;
+                font-size: 25px;
+                padding: 2px 10px;
+                font-family: 'Poppins',      ;
+            }
+            label{
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
+            #play{
+                display: none;
+            }
+            #signupbutton{
+                display: block;
+            }
+            #okay{
+                font-size: 25px;
+                width: 18vh;
+                height: 6vh;
+                border-radius: 10px;
+                box-shadow: 5px 5px 10px -3px rgba(0,0,0,.5);
+                
+            }
+            #home{
+                transition: filter 0.3s ease-in-out;
+            }
+            #updateUser{
+                font-size: 15px;
+            }
+        </style>
+    </head>
+    <body onload="checkCookie()">
+        <section id="home">
+            <div class="logo">
+                <img src="images/logo.png">
+            </div>
+            <button id="signupbutton" class="button" onclick="showSignUp()">Play</button>
+            <a id="play" class="button" href="home.html">Play</a>
+        </section>
+        <section id="signup">
+            <form onsubmit="event.preventDefault(); changeButton(); createCookie();">
+                <label for="user">Enter Username</label>
+                <input type="text" id="user" name="user" placeholder="Username" oninput="checkValidUser()" required>
+                <p id="updateUser"></p>
+                <button class="button" id="okay" type ="submit">Okay</button>
+            </form>
+        </section>
+
+        <script>
+            function showSignUp(){
+                document.getElementById('signup').style.display = "flex";
+                document.getElementById('home').style.filter = "blur(8px)";
+                document.getElementById('home').style.pointerEvents = "none";
+            }
+            function changeButton(){
+                document.getElementById('signupbutton').style.display = "none";
+                document.getElementById('play').style.display = "block";
+                document.getElementById('signup').style.display = "none";
+                document.getElementById('home').style.filter = "blur(0px)";
+                document.getElementById('home').style.pointerEvents = "auto";
+            }
+            function createCookie(){
+                const username = document.getElementById('user').value;
+
+                setCookie("username", username);
+            }
+            function checkCookie() {
+                const username = getCookie("username");
+                if (username !== "") {
+                    changeButton();
+                }
+            }
+            function checkValidUser(){
+                let user = document.getElementById('user').value;
+                let check = /^[a-zA-Z0-9]+$/.test(user)
+                if (check){
+                    document.getElementById('updateUser').innerHTML = 'Valid username.';
+                    document.getElementById('okay').disabled = false;
+                }else{
+                    document.getElementById('updateUser').innerHTML = 'Invalid Username. Username must only contain numbers and letters!';
+                    document.getElementById('okay').disabled = true;
+                }
+            }
+        </script>
+    </body>
+</html>
