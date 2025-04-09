@@ -88,7 +88,7 @@ function selectCTM(){
     document.getElementById('logo').src = "images/ctm-logo.webp";
     document.getElementById('play-button').href = "ctm.html";
     document.getElementById('ctm').classList.add('selected-map');
-    document.body.style.backgroundImage = "url(./images/ctm-bg.png)";
+    document.body.style.backgroundImage = "url(images/ctm-bg.png)";
 }
 function removeSelection(){
     const maps = document.getElementsByClassName('map');
