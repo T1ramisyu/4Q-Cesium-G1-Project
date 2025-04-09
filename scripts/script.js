@@ -48,7 +48,7 @@ function selectBTB(){
     document.getElementById('logo').src = "images/btb-logo.webp";
     document.getElementById('play-button').href = "btb.html";
     document.getElementById('btb').classList.add('selected-map');
-    document.body.style.backgroundImage = "url(../images/btb-bg.png)";
+    document.body.style.backgroundImage = "url(images/btb-bg.png)";
 }
 function selectETP(){
     document.getElementById('title').innerHTML = "Episode 1:";
@@ -56,7 +56,7 @@ function selectETP(){
     document.getElementById('logo').src = "images/etp-logo.webp";
     document.getElementById('play-button').href = "etp.html";
     document.getElementById('etp').classList.add('selected-map');
-    document.body.style.backgroundImage = "url(../images/etp-bg.png)";
+    document.body.style.backgroundImage = "url(images/etp-bg.png)";
 }
 function selectSTD(){
     document.getElementById('title').innerHTML = "Episode 2:";
@@ -64,7 +64,7 @@ function selectSTD(){
     document.getElementById('logo').src = "images/std-logo.webp";
     document.getElementById('play-button').href = "std.html";
     document.getElementById('std').classList.add('selected-map');
-    document.body.style.backgroundImage = "url(../images/std-bg.png)";
+    document.body.style.backgroundImage = "url(images/std-bg.png)";
 }
 function selectITA(){
     document.getElementById('title').innerHTML = "Episode 3:";
@@ -72,7 +72,7 @@ function selectITA(){
     document.getElementById('logo').src = "images/ita-logo.webp";
     document.getElementById('play-button').href = "ita.html";
     document.getElementById('ita').classList.add('selected-map');
-    document.body.style.backgroundImage = "url(../images/ita-bg.png)";
+    document.body.style.backgroundImage = "url(images/ita-bg.png)";
 }
 function selectFTC(){
     document.getElementById('title').innerHTML = "Episode 4:";
@@ -80,7 +80,7 @@ function selectFTC(){
     document.getElementById('logo').src = "images/ftc-logo.webp";
     document.getElementById('play-button').href = "ftc.html";
     document.getElementById('ftc').classList.add('selected-map');
-    document.body.style.backgroundImage = "url(../images/ftc-bg.png)";
+    document.body.style.backgroundImage = "url(images/ftc-bg.png)";
 }
 function selectCTM(){
     document.getElementById('title').innerHTML = "Episode 5:";
@@ -88,7 +88,7 @@ function selectCTM(){
     document.getElementById('logo').src = "images/ctm-logo.webp";
     document.getElementById('play-button').href = "ctm.html";
     document.getElementById('ctm').classList.add('selected-map');
-    document.body.style.backgroundImage = "url(../images/ctm-bg.png)";
+    document.body.style.backgroundImage = "url(images/ctm-bg.png)";
 }
 function removeSelection(){
     const maps = document.getElementsByClassName('map');
