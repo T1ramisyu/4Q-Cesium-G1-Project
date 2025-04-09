@@ -3,198 +3,10 @@
     <head>
         <title>The Dave Stickmin Collection</title>
         <link rel="icon" type="image/ico" href="images/logo.ico">
+        <link rel="stylesheet" href="stylesheets/home.css">
         <script src="cookies.js"></script>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
-            body{
-                background-image: url(images/btb-bg.png);
-                background-size: cover;
-                margin: 0;
-                padding: 0;
-            }
-            .interface{
-                display: flex;
-                justify-content: center;
-                position: absolute;
-                width: 100%;
-                top: 4vh;
-                transition: filter 0.3s ease-in-out;
-            }
-            img, video{
-                user-select: none;
-                -webkit-user-drag: none;
-            }
-            #loading{
-                width: 95%;
-                object-fit: contain;
-            }
-            .title{
-                justify-items: center;
-                position: absolute;
-                top: 5vh;
-                font-size: 28px;
-                font-family: "Lato", sans-serif;
-                color:#eee5de;
-                text-shadow: 
-                0 0 10px #39352c, 0 0 8px #39352c, 0 0 8px #39352c,
-                0 0 10px #39352c, 0 0 8px #39352c, 0 0 8px #39352c,
-                0 0 10px #39352c, 0 0 8px #39352c, 0 0 8px #39352c,
-                0 0 10px #39352c, 0 0 8px #39352c, 0 0 8px #39352c,
-                0 0 10px #39352c, 0 0 8px #39352c, 0 0 10px #39352c;
-            }
-            .title h1{
-                margin: 0;
-            }
-            #logo{
-                position: relative;
-                width: 100vh;
-                margin-top: 25px;
-                animation: move 4s infinite;
-            }
-            
-            .ui{
-                position: absolute;
-                display: flex;
-                justify-content: center;
-                bottom: -9vh;
-                width: 100%;
-            }
-            @keyframes move{
-                0%{
-                    top: 0px;
-                }
-                50%{
-                    top: 15px;
-                }
-                100%{
-                    top: 0px;
-                }
-            }
-
-            #box{
-                width: 90vh;
-            }
-            .options{
-                position: absolute;
-                gap: 4.5vh;
-                display: flex;
-                bottom: 6.5vh;
-            }
-            .map{
-                width: 9vh;
-                transition: all .3s ease-in-out;
-            }
-            .map:hover{
-                transform: scale(1.1);
-            }
-            .welcome{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: absolute;
-                height: 100%;
-                width: 100%;
-            }
-            #welcome{
-                width: 100%;
-            }
-            .welcome-container{
-                background: url(images/bg.png);
-                background-size: cover;
-                display: flex;
-                height: 90%;
-                width: 90%;
-                position: absolute;
-                z-index: 100;
-                border-radius: 20px;
-                flex-direction: column;
-                overflow: hidden;
-                box-shadow: 1px 5px 10px 3px rgba(0,0,0,.6);
-                border: #39352c solid
-            }
-            #welcome-message{
-                text-align: left;
-                font-size: 90px;
-                font-family: 'Poppins', sans-serif;
-                margin: 0;
-            }
-            .close{
-                position: absolute;
-                display: flex;
-                right: 0;
-                top: -0.5vh;
-                border-radius: 5px;
-                background-color: #af3232;
-                box-shadow: 1px 5px 10px -3px rgba(0,0,0,.6);
-            }
-            .close:hover{
-                background-color: #cb4a4a;
-            }
-            #close{
-                width: 5vh;
-            }
-            .selected-map{
-                transform: scale(1.4);
-            }
-            .map.selected-map:hover{
-                transform: scale(1.4);
-            }
-            #game-name{
-                width: 45vh;
-                margin-left: 8px;
-            }
-            .welcome-message-container, .game-info, .guidelines{
-                animation: pan 1s linear forwards;
-                opacity: 0;
-                position: relative;
-            }
-            .welcome-texts{
-                width: 73%;
-            }
-            .game-info{
-                display: flex;
-                font-size: 20.5px;
-                font-weight: 500;
-                align-items: center;
-                font-family: 'Poppins', sans-serif;
-                top: 15vh;
-                padding-left: 4vh;
-                animation-delay: 3s;
-            }
-            .welcome-message-container{
-                width: 100%;
-                animation-delay: 2s;
-                top: 10vh;
-            }
-            .guidelines{
-                margin: 0 4vh;
-                top: 16vh;
-                width: 85%;
-                animation-delay: 3.5s;
-            }
-            video{
-                width: 100%;
-                position: absolute;
-                z-index: -1;
-            }
-            @keyframes pan{
-                0%{
-                    left: 0vh;
-                    opacity: 0;
-                }
-                100%{
-                    left: 8vh;
-                    opacity: 1;
-                }
-            }
-            .guidelines h1{
-                margin: 2vh 0 0 0;
-            }
-        </style>
     </head>
-    <body onload="showWelcomeMessage();">
+    <body onload="showWelcomeMessage()">
         <section id="welcome" class="welcome">
             <div class="welcome-container">
                 <video autoplay muted>
@@ -211,9 +23,17 @@
                     </div>
                     <div class="guidelines">
                         <h1>Guidelines:</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, nam! Voluptas voluptates porro, dolorem itaque suscipit minus eius quod atque voluptate similique,
-                            accusantium cupiditate corrupti natus ipsam aperiam praesentium sunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat obcaecati architecto 
-                            repudiandae autem exercitationem velit praesentium unde, corrupti est laudantium fugit maiores, earum illo explicabo quos dolore adipisci veritatis quidem.</p>
+                        <p>💡 Make choices throughout the game to progress through the story.
+                            <br>
+                            ✅ Choose wisely — each situation has a correct choice.
+                            <br>
+                            ❌ Wrong choice? You’ll lose points from your total score.
+                            <br>
+                            🌟 Right choice? You’ll earn points and move forward!
+                            <br>
+                            🔄 You can try again if you fail — but be careful, your score matters!
+                            <br>
+                            📈 Each new map is harder than the last — so stay sharp!</p>
                     </div>
                 </div>
                 <button class="close" onclick="closeWelcomeMessage()">
@@ -221,12 +41,18 @@
                 </button>
             </div>
         </section>
-        <div id="interface" class="interface">
+        <section id="interface" class="interface">
             <img id="loading" src="images/btb-loading.png">
             <div class="title">
                 <h1 id="title">Prologue :</h1>
                 <img id="logo" src="images/btb-logo.webp">
             </div>
+            <div class="play">
+                <div class="play-wrap" id="play-wrap">
+                    <a id="play-button" href="btb.html" onclick="event.preventDefault(); playCutscene();">PLAY</a>
+                </div>
+            </div>
+            <div id="flash"></div>
             <div class="ui">
                 <img id="box" src="images/box.png">
             </div>
@@ -240,7 +66,16 @@
                     <img class="map" id="ctm" src="images/CtM.png" onclick="removeSelection(); selectCTM();">
                 </div>
             </div>
-        </div>
+            <div class="cutscene-container">
+                <div id="btb-cutscene" class="cutscene">
+                    <img src="images/btb-david-cutscene.png">
+                </div>
+                <div id="etp-cutscene" class="cutscene">
+                    <img id="etp-cops" src="images/etp-cops-cutscene.png">
+                    <img id="etp-david" src="images/etp-david-cutscene.png">
+                </div>
+            </div>
+        </section>
 
         <script>
             function showWelcomeMessage(){
@@ -257,49 +92,66 @@
                 document.getElementById('title').innerHTML = "Prologue:";
                 document.getElementById('loading').src = "images/btb-loading.png";
                 document.getElementById('logo').src = "images/btb-logo.webp";
+                document.getElementById('play-button').href = "btb.html";
                 document.getElementById('btb').classList.add('selected-map');
-                document.body.style.backgroundImage = "url(images/btb-bg.png)";
+                document.body.style.backgroundImage = "url(../images/btb-bg.png)";
             }
             function selectETP(){
                 document.getElementById('title').innerHTML = "Episode 1:";
                 document.getElementById('loading').src = "images/etp-loading.png";
                 document.getElementById('logo').src = "images/etp-logo.webp";
+                document.getElementById('play-button').href = "etp.html";
                 document.getElementById('etp').classList.add('selected-map');
-                document.body.style.backgroundImage = "url(images/etp-bg.png)";
+                document.body.style.backgroundImage = "url(../images/etp-bg.png)";
             }
             function selectSTD(){
                 document.getElementById('title').innerHTML = "Episode 2:";
                 document.getElementById('loading').src = "images/std-loading.png";
                 document.getElementById('logo').src = "images/std-logo.webp";
+                document.getElementById('play-button').href = "std.html";
                 document.getElementById('std').classList.add('selected-map');
-                document.body.style.backgroundImage = "url(images/std-bg.png)";
+                document.body.style.backgroundImage = "url(../images/std-bg.png)";
             }
             function selectITA(){
                 document.getElementById('title').innerHTML = "Episode 3:";
                 document.getElementById('loading').src = "images/ita-loading.gif";
                 document.getElementById('logo').src = "images/ita-logo.webp";
+                document.getElementById('play-button').href = "ita.html";
                 document.getElementById('ita').classList.add('selected-map');
-                document.body.style.backgroundImage = "url(images/ita-bg.png)";
+                document.body.style.backgroundImage = "url(../images/ita-bg.png)";
             }
             function selectFTC(){
                 document.getElementById('title').innerHTML = "Episode 4:";
                 document.getElementById('loading').src = "images/ftc-loading.png";
                 document.getElementById('logo').src = "images/ftc-logo.webp";
+                document.getElementById('play-button').href = "ftc.html";
                 document.getElementById('ftc').classList.add('selected-map');
-                document.body.style.backgroundImage = "url(images/ftc-bg.png)";
+                document.body.style.backgroundImage = "url(../images/ftc-bg.png)";
             }
             function selectCTM(){
                 document.getElementById('title').innerHTML = "Episode 5:";
                 document.getElementById('loading').src = "images/ctm-loading.png";
                 document.getElementById('logo').src = "images/ctm-logo.webp";
+                document.getElementById('play-button').href = "ctm.html";
                 document.getElementById('ctm').classList.add('selected-map');
-                document.body.style.backgroundImage = "url(images/ctm-bg.png)";
+                document.body.style.backgroundImage = "url(../images/ctm-bg.png)";
             }
             function removeSelection(){
                 const maps = document.getElementsByClassName('map');
                 for (let i = 0; i < maps.length; i++) {
                     maps[i].classList.remove('selected-map');
                 }
+            }
+            function playCutscene(){
+                const selectedMap = document.querySelector('.map.selected-map');
+                const mapID = selectedMap.id;
+                const cutscene = document.getElementById(mapID + '-cutscene');
+                cutscene.style.display="flex";
+                document.getElementById('flash').classList.add('flash');
+
+                setTimeout(function() {
+                    window.location.href = mapID +".html";
+                }, 3000);
             }
         </script>
     </body>
