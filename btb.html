@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Cesium-Group1">
+    <meta name="project" content="CS3-4Q-Project">
+    <title>Breaking the Bank</title>
+    <link rel="stylesheet" href="stylesheets/btb.css">
+    <link rel="icon" type="image/ico" href="images/logo.ico">
+    <script src="scripts/btb.js" defer></script>
+</head>
+<body>
+    <div id="loadingScreen">
+        <div id="loadingContainer">
+          <div id="loadingBar"></div>
+        </div>
+        <div id="loadingText">Loading: 0%</div>
+    </div> 
+    <div id="startButton">
+        <div id="intro">You're scored based on how fast you finish this. <br> Will you be the fastest?</div>
+        <div id="start">Start Game</div>
+    </div>
+    <div id="game-container">
+        <div id="scenes">
+            <video id="video1" preload>
+                <source src="scenes/scene1.mp4" type="video/mp4">
+            </video>
+            <video id="video2-shovel" preload>
+                <source src="scenes/scene2-shovel.mp4" type="video/mp4">
+            </video>
+            <video id="video2-explosives" preload>
+                <source src="scenes/scene2-explosives.mp4" type="video/mp4">
+            </video>
+            <video id="video2-teleporter" preload>
+                <source src="scenes/scene2-teleporter.mp4" type="video/mp4">
+            </video>
+            <video id="video2-lazer" preload>
+                <source src="scenes/scene2-lazer.mp4" type="video/mp4">
+            </video>
+            <video id="video2-wreckingball" preload>
+                <source src="scenes/scene2-wreckingball.mp4" type="video/mp4">
+            </video>
+            <video id="video2-disguise" preload>
+                <source src="scenes/scene2-disguise.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <div id="fail">
+        <div class="fail-title">
+            <img src="images/fail.png">
+        </div>
+        <div id="retryButton">Retry</div>
+    </div>
+    <div id="scoreDisplay">00:00</div>
+    <div id="choices-overlay">
+        <div id="choices-grid">
+            <div class="choice-item" onclick="afterChoiceScene('shovel')">
+                <div class="img-container" id="shovel"></div>
+                <div class="img-container-word" id="shovel-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoiceScene('explosives')">
+                <div class="img-container" id="explosives"></div>
+                <div class="img-container-word" id="explosives-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoiceScene('teleporter')">
+                <div class="img-container" id="teleporter"></div>
+                <div class="img-container-word" id="teleporter-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoiceScene('lazer')">
+                <div class="img-container" id="lazer"></div>
+                <div class="img-container-word" id="lazer-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoiceScene('wreckingball')">
+                <div class="img-container" id="wreckingball"></div>
+                <div class="img-container-word" id="wreckingball-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoiceScene('disguise')">
+                <div class="img-container" id="disguise"></div>
+                <div class="img-container-word" id="disguise-word"></div>
+            </div>
+        </div>
+    </div>
+    <div id="highScore">
+        <div id="previousHighScore">s</div>
+        <div id="currentScore">s</div>
+    </div>
+    <div class="button" id="home">Back to Home</div>
+</body>
+</html>
