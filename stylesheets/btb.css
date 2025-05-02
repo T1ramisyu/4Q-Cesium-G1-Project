@@ -118,13 +118,13 @@ body {
 }
 
 #shovel {
-    background-image: url('images/btb-items.png');
+    background-image: url('../images/btb-items.png');
     background-position: -5px -370px;
     background-repeat: no-repeat;
 }
 
 #shovel-word {
-    background: url('images/btb-items.png') no-repeat -435px -1145px;
+    background: url('../images/btb-items.png') no-repeat -435px -1145px;
     width: 149px;
     height: 42px;
 }
@@ -144,61 +144,61 @@ body {
 }
 
 #explosives {
-    background: url('images/btb-items.png') no-repeat -25px -582px;
+    background: url('../images/btb-items.png') no-repeat -25px -582px;
     width: 72px;
     height: 133px;
 }
 
 #explosives-word {
-    background: url('images/btb-items.png') no-repeat -620px -1145px;
+    background: url('../images/btb-items.png') no-repeat -620px -1145px;
     width: 227px;
     height: 52px;
 }
 
 #teleporter {
-    background: url('images/btb-items.png') no-repeat -1257px -970px;
+    background: url('../images/btb-items.png') no-repeat -1257px -970px;
     width: 150px;
     height: 167px;
 }
 
 #teleporter-word {
-    background: url('images/btb-items.png') no-repeat -1222px -1145px;
+    background: url('../images/btb-items.png') no-repeat -1222px -1145px;
     width: 224px;
     height: 50px;
 }
 
 #lazer {
-    background: url('images/btb-items.png') no-repeat -38px -973px;
+    background: url('../images/btb-items.png') no-repeat -38px -973px;
     width: 155px;
     height: 147px;
 }
 
 #lazer-word {
-    background: url('images/btb-items.png') no-repeat -40px -1145px;
+    background: url('../images/btb-items.png') no-repeat -40px -1145px;
     width: 117px;
     height: 42px;
 }
 
 #wreckingball {
-    background: url('images/btb-items.png') no-repeat -964px -952px;
+    background: url('../images/btb-items.png') no-repeat -964px -952px;
     width: 109px;
     height: 183px;
 }
 
 #wreckingball-word {
-    background: url('images/btb-items.png') no-repeat -878px -1145px;
+    background: url('../images/btb-items.png') no-repeat -878px -1145px;
     width: 299px;
     height: 52px;
 }
 
 #disguise {
-    background: url('images/btb-items.png') no-repeat -234px -945px;
+    background: url('../images/btb-items.png') no-repeat -234px -945px;
     width: 120px;
     height: 166px;
 }
 
 #disguise-word {
-    background: url('images/btb-items.png') no-repeat -220px -1145px;
+    background: url('../images/btb-items.png') no-repeat -220px -1145px;
     width: 181px;
     height: 52px;
 }
