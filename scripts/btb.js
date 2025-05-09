@@ -99,10 +99,10 @@
                 const formattedTime = formatTime(finalTime);
                 const highScoreDiv = document.getElementById('previousHighScore');
                 const currentScoreDiv = document.getElementById('currentScore');
-                const previousBest = localStorage.getItem('highScore');
+                const previousBest = localStorage.getItem('highScoreBTB');
     
                 if (!previousBest || finalTime < parseFloat(previousBest)) {
-                    localStorage.setItem('highScore', finalTime);
+                    localStorage.setItem('highScoreBTB', finalTime);
                     highScoreDiv.textContent = `New High Score: ${formattedTime}`;
                 } else {
                     highScoreDiv.textContent = `High Score: ${formatTime(previousBest)}`;
@@ -113,11 +113,15 @@
                 document.getElementById('highScore').style.display = 'block';
                 document.getElementById('home').style.display = 'block';
             } else {
-                document.getElementById('fail').style.display = 'flex';
+                showFail(itemChoice);
             }
         };
     }
-    
+    function showFail(itemChoice){
+        const failedChoice = itemChoice + '-fail-comment';
+        document.getElementById('fail').style.display = 'flex';
+        document.getElementById('fail-comment').classList.add(failedChoice);
+    }
     function playVideo(videoID) {
         let vid = document.getElementById(videoID);
         vid.style.display = "block";
@@ -126,6 +130,7 @@
     
     document.getElementById('retryButton').addEventListener('click', () => {
         const allVideos = document.querySelectorAll('#scenes video');
+        const failComment = document.getElementById('fail-comment');
         allVideos.forEach(video => {
             video.style.display = 'none';
         });
@@ -133,9 +138,72 @@
         document.getElementById('choices-overlay').style.display = 'flex';
         video1.style.display = 'block';
         document.getElementById('fail').style.display = 'none';
+        while (failComment.classList.length > 0) {
+            failComment.classList.remove(failComment.classList.item(0));
+        }
+        
     });
     
     document.getElementById('home').addEventListener('click', () => {
         window.location.href = 'home.html';
     });
+
+    const shovel = document.getElementById('shovel');
+    const shovelWord = document.getElementById('shovel-word');
+    const explosives = document.getElementById('explosives');
+    const explosivesWord = document.getElementById('explosives-word');
+    const teleporter = document.getElementById('teleporter');
+    const teleporterWord = document.getElementById('teleporter-word');
+    const lazer = document.getElementById('lazer');
+    const lazerWord = document.getElementById('lazer-word');
+    const wreckingball = document.getElementById('wreckingball');
+    const wreckingballWord = document.getElementById('wreckingball-word');
+    const disguise = document.getElementById('disguise');
+    const disguiseWord = document.getElementById('disguise-word');
     
+    let currentState = 'normal';
+    
+    function playForward(item, itemWord) {
+        if (currentState === 'forward') return;
+        
+        const animationForward = item.id + '-forward';
+        const animationWordForward = itemWord.id + '-forward';
+    
+        item.classList.add(animationForward);
+        itemWord.classList.add(animationWordForward);
+    }
+    
+    function resetAnimation(item, itemWord) {
+        const animationForward = item.id + '-forward';
+        const animationWordForward = itemWord.id + '-forward';
+
+        item.classList.remove(animationForward);
+        itemWord.classList.remove(animationWordForward);
+
+        currentState = 'normal';
+    }
+    
+    [shovel, shovelWord].forEach(el => {
+        el.addEventListener('mouseenter', () => playForward(shovel, shovelWord));
+        el.addEventListener('mouseleave', () => resetAnimation(shovel, shovelWord));
+    });
+    [explosives, explosivesWord].forEach(el => {
+        el.addEventListener('mouseenter', () => playForward(explosives, explosivesWord));
+        el.addEventListener('mouseleave', () => resetAnimation(explosives, explosivesWord));
+    });
+    [teleporter, teleporterWord].forEach(el => {
+        el.addEventListener('mouseenter', () => playForward(teleporter, teleporterWord));
+        el.addEventListener('mouseleave', () => resetAnimation(teleporter, teleporterWord));
+    });
+    [lazer, lazerWord].forEach(el => {
+        el.addEventListener('mouseenter', () => playForward(lazer, lazerWord));
+        el.addEventListener('mouseleave', () => resetAnimation(lazer, lazerWord));
+    });
+    [wreckingball, wreckingballWord].forEach(el => {
+        el.addEventListener('mouseenter', () => playForward(wreckingball, wreckingballWord));
+        el.addEventListener('mouseleave', () => resetAnimation(wreckingball, wreckingballWord));
+    });
+    [disguise, disguiseWord].forEach(el => {
+        el.addEventListener('mouseenter', () => playForward(disguise, disguiseWord));
+        el.addEventListener('mouseleave', () => resetAnimation(disguise, disguiseWord));
+    });
