@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Cesium-Group1">
+    <meta name="project" content="CS3-4Q-Project">
+    <title>Breaking the Bank</title>
+    <link rel="stylesheet" href="stylesheets/etp.css">
+    <link rel="icon" type="image/ico" href="images/logo.ico">
+    <script src="scripts/etp.js" defer></script>
+</head>
+<body>
+    <div id="loadingScreen">
+        <div id="loadingContainer">
+          <div id="loadingBar"></div>
+        </div>
+        <div id="loadingText">Loading: 0%</div>
+    </div> 
+    <div id="startButton">
+        <div id="intro">You're scored based on how fast you finish this. <br> Will you be the fastest?</div>
+        <div id="start">Start Game</div>
+    </div>
+    
+    <div id="game-container">
+        <div id="scenes">
+            <video id="video1" preload>
+                <source src="scenes/EtP/video1.mp4" type="video/mp4">
+            </video>
+            <video id="video2-file" preload>
+                <source src="scenes/EtP/video2-file.mp4" type="video/mp4">
+            </video>
+            <video id="video2-nrgdrink" preload>
+                <source src="scenes/EtP/video2-nrgdrink.mp4" type="video/mp4">
+            </video>
+            <video id="video2-teleporter" preload>
+                <source src="scenes/EtP/video2-teleporter.mp4" type="video/mp4">
+            </video>
+            <video id="video2-rocketlauncher" preload>
+                <source src="scenes/EtP/video2-rocketlauncher.mp4" type="video/mp4">
+            </video>
+            <video id="video2-cellphone" preload>
+                <source src="scenes/EtP/video2-cellphone.mp4" type="video/mp4">
+            </video>
+            <video id="video2-drill" preload>
+                <source src="scenes/EtP/video2-drill.mp4" type="video/mp4">
+            </video>
+            <video id="video3-window" preload>
+                <source src="scenes/EtP/video3-window.mp4" type="video/mp4">
+            </video>
+            <video id="video3-celldoor" preload>
+                <source src="scenes/EtP/video3-celldoor.mp4" type="video/mp4">
+            </video>
+            <video id="video4-click1" preload>
+                <source src="scenes/EtP/video4-click1.mp4" type="video/mp4">
+            </video>
+            <video id="video4-click1-fail" preload>
+                <source src="scenes/EtP/video4-click1-fail.mp4" type="video/mp4">
+            </video>
+            <video id="video4-click2" preload>
+                <source src="scenes/EtP/video4-click2.mp4" type="video/mp4">
+            </video>
+            <video id="video4-click2-fail" preload>
+                <source src="scenes/EtP/video4-click2-fail.mp4" type="video/mp4">
+            </video>
+            <video id="video4-afterclick" preload>
+                <source src="scenes/EtP/video4-afterclick.mp4" type="video/mp4">
+            </video>
+            <video id="video5-beltofgrenades" preload>
+                <source src="scenes/EtP/video5-beltofgrenades.mp4" type="video/mp4">
+            </video>
+            <video id="video5-chair" preload>
+                <source src="scenes/EtP/video5-chair.mp4" type="video/mp4">
+            </video>
+            <video id="video5-chair-left" preload>
+                <source src="scenes/EtP/video5-chair-left.mp4" type="video/mp4">
+            </video>
+            <video id="video5-chair-right" preload>
+                <source src="scenes/EtP/video5-chair-right.mp4" type="video/mp4">
+            </video>
+            <video id="video6-rope" preload>
+                <source src="scenes/EtP/video6-rope.mp4" type="video/mp4">
+            </video>
+            <video id="video6-parachute" preload>
+                <source src="scenes/EtP/video6-parachute.mp4" type="video/mp4">
+            </video>
+            <video id="video6-plungers" preload>
+                <source src="scenes/EtP/video6-plungers.mp4" type="video/mp4">
+            </video>
+            <video id="video6-jetpack" preload>
+                <source src="scenes/EtP/video6-jetpack.mp4" type="video/mp4">
+            </video>
+            <video id="video3-lawyerfail" preload>
+                <source src="scenes/EtP/video3-lawyerfail.mp4" type="video/mp4">
+            </video>
+            <video id="video3-disguisingbag" preload>
+                <source src="scenes/EtP/video3-disguisingbag.mp4" type="video/mp4">
+            </video>
+            <video id="video3-opacitator" preload>
+                <source src="scenes/EtP/video3-opacitator.mp4" type="video/mp4">
+            </video>
+            <video id="video3-crowbar" preload>
+                <source src="scenes/EtP/video3-crowbar.mp4" type="video/mp4">
+            </video>
+            <video id="video4-click3" preload>
+                <source src="scenes/EtP/video4-click3.mp4" type="video/mp4">
+            </video>
+            <video id="video4-click3-fail" preload>
+                <source src="scenes/EtP/video4-click3-fail.mp4" type="video/mp4">
+            </video>
+            <video id="video4-click3-left" preload>
+                <source src="scenes/EtP/video4-click3-left.mp4" type="video/mp4">
+            </video>
+            <video id="video4-click3-right" preload>
+                <source src="scenes/EtP/video4-click3-right.mp4" type="video/mp4">
+            </video>
+            <video id="video4-click4-left" preload>
+                <source src="scenes/EtP/video4-click4-left.mp4" type="video/mp4">
+            </video>
+            <video id="video4-click4-fail" preload>
+                <source src="scenes/EtP/video4-click4-fail.mp4" type="video/mp4">
+            </video>
+            <video id="video4-click4-up" preload>
+                <source src="scenes/EtP/video4-click4-up.mp4" type="video/mp4">
+            </video>
+            <video id="video5-afterclick" preload>
+                <source src="scenes/EtP/video5-afterclick.mp4" type="video/mp4">
+            </video>
+            <video id="video5-click" preload>
+                <source src="scenes/EtP/video5-click.mp4" type="video/mp4">
+            </video>
+            <video id="video5-click-fail" preload>
+                <source src="scenes/EtP/video5-click-fail.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div id="arrow1-holder">
+            <div id="arrow1">
+                <div class="arrow-triangle"></div><div class="arrow-sign"></div><div class="arrow-word"></div>
+            </div>
+        </div>
+        <div id="arrow2-holder">
+            <div id="arrow2">
+                <div class="arrow-triangle2"></div><div class="arrow-sign"></div><div class="arrow-word"></div>
+            </div>
+        </div>
+        <div id="arrows1">
+            <div id="arrow1-left"></div>
+            <div id="arrow1-right"></div>
+        </div>
+        <div id="arrows2">
+            <div id="arrow2-left"></div>
+            <div id="arrow2-up"></div>
+        </div>
+        <div id="finalclick"></div>
+        <div id="click-timer-bar-container">
+            <div id="click-timer-bar"></div>
+        </div>
+        <div id="fail">
+            <div class="fail-title">
+                <img src="images/etp-fails.png">
+            </div>
+            <div id="fail-comment"></div>
+            <div id="retryButton" onclick="retry('choices-overlay1', 'video1')">Retry</div>
+        </div>
+        <div id="scoreDisplay">00:00</div>
+    <div id="skip"> <img src="images/skip.png"> </div>
+    <div id="skip1"> <img src="images/skip.png"> </div>
+    </div>
+
+    <div id="choices-overlay1">
+        <div id="choices-grid1">
+            <div class="choice-item" onclick="afterChoice1Scene('file')">
+                <div class="img-container" id="file"></div>
+                <div class="img-container-word" id="file-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoice1Scene('nrgdrink')">
+                <div class="img-container" id="nrgdrink"></div>
+                <div class="img-container-word" id="nrgdrink-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoice1Scene('teleporter')">
+                <div class="img-container" id="teleporter"></div>
+                <div class="img-container-word" id="teleporter-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoice1Scene('rocketlauncher')">
+                <div class="img-container" id="rocketlauncher"></div>
+                <div class="img-container-word" id="rocketlauncher-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoice1Scene('cellphone')">
+                <div class="img-container" id="cellphone"></div>
+                <div class="img-container-word" id="cellphone-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoice1Scene('drill')">
+                <div class="img-container" id="drill"></div>
+                <div class="img-container-word" id="drill-word"></div>
+            </div>
+        </div>
+    </div>
+    <div id="choices-overlay2">
+        <div id="choices-grid2">
+            <div class="choice-item" onclick="afterChoice2Scene('celldoor')">
+                <div class="img-container" id="celldoor"></div>
+                <div class="img-container-word" id="celldoor-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoice2Scene('window')">
+                <div class="img-container" id="window"></div>
+                <div class="img-container-word" id="window-word"></div>
+            </div>
+        </div>
+    </div>
+    <div id="choices-overlay3">
+        <div id="choices-grid3">
+            <div class="choice-item" onclick="afterChoice3Scene('beltofgrenades')">
+                <div class="img-container" id="beltofgrenades"></div>
+                <div class="img-container-word" id="beltofgrenades-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoice3Scene('chair')">
+                <div class="img-container" id="chair"></div>
+                <div class="img-container-word" id="chair-word"></div>
+            </div>
+        </div>
+    </div>
+    <div id="choices-overlay4">
+        <div id="choices-grid4">
+            <div class="choice-item" onclick="afterChoice4Scene('chair-left')">
+                <div class="img-container" id="chair-left"></div>
+                <div class="img-container-word" id="chair-left-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoice4Scene('chair-right')">
+                <div class="img-container" id="chair-right"></div>
+                <div class="img-container-word" id="chair-right-word"></div>
+            </div>
+        </div>
+    </div>
+    <div id="choices-overlay5">
+        <div id="choices-grid5">
+            <div class="choice-item" onclick="afterChoice5Scene('rope')">
+                <div class="img-container" id="rope"></div>
+                <div class="img-container-word" id="rope-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoice5Scene('parachute')">
+                <div class="img-container" id="parachute"></div>
+                <div class="img-container-word" id="parachute-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoice5Scene('plungers')">
+                <div class="img-container" id="plungers"></div>
+                <div class="img-container-word" id="plungers-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoice5Scene('jetpack')">
+                <div class="img-container" id="jetpack"></div>
+                <div class="img-container-word" id="jetpack-word"></div>
+            </div>
+        </div>
+    </div>
+    <div id="choices-overlay6">
+        <div id="choices-grid6">
+            <div class="choice-item" onclick="afterChoice6Scene('lawyerfail')">
+                <div class="img-container" id="attorneysbadge"></div>
+                <div class="img-container-word" id="attorneysbadge-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoice6Scene('disguisingbag')">
+                <div class="img-container" id="disguisingbag"></div>
+                <div class="img-container-word" id="disguisingbag-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoice6Scene('lawyerfail')">
+                <div class="img-container" id="mysteriousdevice"></div>
+                <div class="img-container-word" id="mysteriousdevice-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoice6Scene('lawyerfail')">
+                <div class="img-container" id="floorplans"></div>
+                <div class="img-container-word" id="floorplans-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoice6Scene('lawyerfail')">
+                <div class="img-container" id="doctorsanalysis"></div>
+                <div class="img-container-word" id="doctorsanalysis-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoice6Scene('lawyerfail')">
+                <div class="img-container" id="securityfootage"></div>
+                <div class="img-container-word" id="securityfootage-word"></div>
+            </div>
+        </div>
+    </div>
+    <div id="choices-overlay7">
+        <div id="choices-grid7">
+            <div class="choice-item" onclick="afterChoice7Scene('opacitator')">
+                <div class="img-container" id="opacitator"></div>
+                <div class="img-container-word" id="opacitator-word"></div>
+            </div>
+            <div class="choice-item" onclick="afterChoice7Scene('crowbar')">
+                <div class="img-container" id="crowbar"></div>
+                <div class="img-container-word" id="crowbar-word"></div>
+            </div>
+        </div>
+    </div>
+    <div id="highScore">
+        <div id="previousHighScore"></div>
+        <div id="currentScore"></div>
+    </div>
+    <div class="button" id="home">Back to Home</div>
+</body>
+</html>
