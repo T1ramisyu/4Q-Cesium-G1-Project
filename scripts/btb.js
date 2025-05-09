@@ -93,7 +93,6 @@
         let vid = document.getElementById(videoID);
         vid.onended = () => {
             if (itemChoice === 'disguise') {
-                // WIN CASE: Show final score
                 clearInterval(scoreInterval);
                 const finalTime = performance.now() - startTime;
                 const formattedTime = formatTime(finalTime);
