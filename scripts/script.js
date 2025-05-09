@@ -10,20 +10,44 @@ function changeButton(){
     document.getElementById('home').style.filter = "blur(0px)";
     document.getElementById('home').style.pointerEvents = "auto";
 }
-function createCookie(){
+function createUser(){
     const username = document.getElementById('user').value;
-
-    setCookie("username", username);
+    localStorage.setItem("username", username);
 }
-function checkCookie() {
-    const username = getCookie("username");
-    if (username !== "") {
+function checkUser() {
+    const username = localStorage.getItem("username");
+    if (username) {
         changeButton();
+    } 
+}
+function redirectUser(){
+    const username = localStorage.getItem("username");
+    if(username==null) {
+        window.location.href = "index.html";
     }
+}
+function logout() {
+    localStorage.removeItem("username");
+    localStorage.removeItem("welcomeShown");
+    localStorage.removeItem("highScoreBTB");
+    localStorage.removeItem("highScoreETP");
+    window.location.href = "index.html";
+}
+function showLogout(){
+    document.getElementById('logout-wrapper').style.display='flex';
+    document.getElementById('interface').style.filter = "blur(5px)";
+    document.getElementById('logout').style.filter = "blur(5px)";
+    document.getElementById('logout').style.pointerEvents = "none";
+}
+function closeLogout(){
+    document.getElementById('logout-wrapper').style.display='none';
+    document.getElementById('interface').style.filter = "blur(0px)";
+    document.getElementById('logout').style.filter = "blur(0px)";
+    document.getElementById('logout').style.pointerEvents = "auto";
 }
 function checkValidUser(){
     let user = document.getElementById('user').value;
-    let check = /^[a-zA-Z0-9]+$/.test(user)
+    let check = /^[a-zA-Z0-9]+$/.test(user);
     if (check){
         document.getElementById('updateUser').innerHTML = 'Valid username.';
         document.getElementById('okay').disabled = false;
@@ -32,11 +56,16 @@ function checkValidUser(){
         document.getElementById('okay').disabled = true;
     }
 }
-function showWelcomeMessage(){
-    const message = getCookie("username");
-    document.getElementById('welcome-message').innerHTML = "Hello " + message + "!";
-    document.getElementById('welcome').style.display = "flex";
-    document.getElementById('interface').style.filter = "blur(5px)";
+function showWelcomeMessage() {
+    const message = localStorage.getItem("username");
+    const welcomeShown = localStorage.getItem("welcomeShown");
+
+    if (message && !welcomeShown) {
+        document.getElementById('welcome-message').innerHTML = "Hello " + message + "!";
+        document.getElementById('welcome').style.display = "flex";
+        document.getElementById('interface').style.filter = "blur(5px)";
+        localStorage.setItem("welcomeShown", "true");
+    }
 }
 function closeWelcomeMessage(){
     document.getElementById('welcome').style.display = "none";
@@ -81,14 +110,6 @@ function selectFTC(){
     document.getElementById('play-button').href = "ftc.html";
     document.getElementById('ftc').classList.add('selected-map');
     document.body.style.backgroundImage = "url(images/ftc-bg.png)";
-}
-function selectCTM(){
-    document.getElementById('title').innerHTML = "Episode 5:";
-    document.getElementById('loading').src = "images/ctm-loading.png";
-    document.getElementById('logo').src = "images/ctm-logo.webp";
-    document.getElementById('play-button').href = "ctm.html";
-    document.getElementById('ctm').classList.add('selected-map');
-    document.body.style.backgroundImage = "url(images/ctm-bg.png)";
 }
 function removeSelection(){
     const maps = document.getElementsByClassName('map');
