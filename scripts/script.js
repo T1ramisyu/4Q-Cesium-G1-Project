@@ -20,12 +20,6 @@ function checkUser() {
         changeButton();
     } 
 }
-function redirectUser(){
-    const username = localStorage.getItem("username");
-    if(username==null) {
-        window.location.href = "index.html";
-    }
-}
 function logout() {
     localStorage.removeItem("username");
     localStorage.removeItem("welcomeShown");
