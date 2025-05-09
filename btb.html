@@ -10,17 +10,17 @@
     <script src="scripts/btb.js" defer></script>
 </head>
 <body>
-    <section id="loadingScreen">
+    <div id="loadingScreen">
         <div id="loadingContainer">
           <div id="loadingBar"></div>
         </div>
         <div id="loadingText">Loading: 0%</div>
-    </section> 
+    </div> 
     <div id="startButton">
         <div id="intro">You're scored based on how fast you finish this. <br> Will you be the fastest?</div>
         <div id="start">Start Game</div>
     </div>
-    <section id="game-container">
+    <div id="game-container">
         <div id="scenes">
             <video id="video1" preload>
                 <source src="scenes/scene1.mp4" type="video/mp4">
@@ -44,15 +44,17 @@
                 <source src="scenes/scene2-disguise.mp4" type="video/mp4">
             </video>
         </div>
-    </section>
-    <section id="fail">
+    </div>
+    <div id="fail">
+        <div class="fail-bg"></div>
         <div class="fail-title">
-            <img src="images/fail.png">
+            <img src="images/btb-fails.png">
         </div>
+        <div id="fail-comment" class="shovel-fail-comment"></div>
         <div id="retryButton">Retry</div>
-    </section>
+    </div>
     <div id="scoreDisplay">00:00</div>
-    <section id="choices-overlay">
+    <div id="choices-overlay">
         <div id="choices-grid">
             <div class="choice-item" onclick="afterChoiceScene('shovel')">
                 <div class="img-container" id="shovel"></div>
@@ -71,19 +73,23 @@
                 <div class="img-container-word" id="lazer-word"></div>
             </div>
             <div class="choice-item" onclick="afterChoiceScene('wreckingball')">
-                <div class="img-container" id="wreckingball"></div>
+                <div class="img-container" id="wreckingball">
+                    <img src="images/btb-items.png" id="wreckingball-item">
+                </div>
                 <div class="img-container-word" id="wreckingball-word"></div>
             </div>
             <div class="choice-item" onclick="afterChoiceScene('disguise')">
-                <div class="img-container" id="disguise"></div>
+                <div class="img-container" id="disguise-inside">
+                    <div id="disguise"></div>
+                </div>
                 <div class="img-container-word" id="disguise-word"></div>
             </div>
         </div>
-    </section>
-    <section id="highScore">
-        <div id="previousHighScore"></div>
-        <div id="currentScore"></div>
-    </section>
+    </div>
+    <div id="highScore">
+        <div id="previousHighScore">s</div>
+        <div id="currentScore">s</div>
+    </div>
     <div class="button" id="home">Back to Home</div>
 </body>
 </html>
