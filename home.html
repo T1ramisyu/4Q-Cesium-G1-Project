@@ -10,7 +10,7 @@
         <script src="scripts/cookies.js"></script>
         <script src="scripts/script.js"></script>
     </head>
-    <body onload="showWelcomeMessage()">
+    <body onload="showWelcomeMessage(); redirectUser();">
         <section id="welcome" class="welcome">
             <div class="welcome-container">
                 <video autoplay muted>
@@ -67,17 +67,39 @@
                     <img class="map" id="std" src="images/std.png" onclick="removeSelection(); selectSTD();">
                     <img class="map" id="ita" src="images/ita.png" onclick="removeSelection(); selectITA();">
                     <img class="map" id="ftc" src="images/ftc.png" onclick="removeSelection(); selectFTC();">
-                    <img class="map" id="ctm" src="images/CtM.png" onclick="removeSelection(); selectCTM();">
                 </div>
             </div>
             <div class="cutscene-container">
                 <div id="btb-cutscene" class="cutscene">
-                    <img src="images/btb-david-cutscene.png">
+                    <img src="images/btb-left-cutscene.png">
                 </div>
                 <div id="etp-cutscene" class="cutscene">
-                    <img id="etp-cops" src="images/etp-cops-cutscene.png">
-                    <img id="etp-david" src="images/etp-david-cutscene.png">
+                    <img class="left-cutscene" id="etp-left" src="images/etp-left-cutscene.png">
+                    <img class="right-cutscene" id="etp-right" src="images/etp-right-cutscene.png">
                 </div>
+                <div id="std-cutscene" class="cutscene">
+                    <img class="left-cutscene" id="etp-left" src="images/std-left-cutscene.png">
+                    <img class="right-cutscene" id="etp-right" src="images/std-right-cutscene.png">
+                </div>
+                <div id="ita-cutscene" class="cutscene">
+                    <img class="left-cutscene" id="ita-left" src="images/ita-left-cutscene.png">
+                    <img class="right-cutscene" id="ita-right" src="images/ita-right-cutscene.png">
+                </div>
+                <div id="ftc-cutscene" class="cutscene">
+                    <img class="left-cutscene" id="ita-left" src="images/ita-left-cutscene.png">
+                    <img class="right-cutscene" id="ita-right" src="images/ita-right-cutscene.png">
+                </div>
+            </div>
+        </section>
+        <button id="logout" onclick="showLogout()">Logout</button>
+        
+        <section id="logout-wrapper">
+            <div id="logout-ui">
+                <p>Are you sure you want to log out? All your progress will be lost and cannot be retrieved.</p>
+                <button id="complete-logout" onclick="logout()">Continue</button>
+                <button class="close" onclick="closeLogout()">
+                    <img id="close" src="images/close.png">
+                </button>
             </div>
         </section>
     </body>
