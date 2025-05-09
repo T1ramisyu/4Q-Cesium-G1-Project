@@ -73,9 +73,10 @@ img, video{
 }
 .options{
     position: absolute;
-    gap: 4.5vh;
+    gap: 7vh;
     display: flex;
     bottom: 6.5vh;
+    left: 54vh;
 }
 .map{
     width: 9vh;
@@ -91,6 +92,7 @@ img, video{
     position: absolute;
     height: 100%;
     width: 100%;
+    z-index: 1000000;
 }
 #welcome{
     width: 100%;
@@ -108,7 +110,7 @@ img, video{
     flex-direction: column;
     overflow: hidden;
     box-shadow: 1px 5px 10px 3px rgba(0,0,0,.6);
-    border: #39352c solid
+    border: #39352c solid;
 }
 #welcome-message{
     text-align: left;
@@ -235,30 +237,27 @@ a{
     bottom: 0;
     width: 100%;
 }
-#btb-cutscene img{
-    width: 50vh;
-}
 #btb-cutscene{
     position: relative;
     left: 20vh;
     animation: cutscene-left 2.8s ease-out forwards;
     display: none;
 }
-#etp-cutscene{
+.cutscene{
     display: flex;
     position: relative;
     width: 100%;
     display: none;
 }
-#etp-cutscene img{
+.cutscene img{
     height: 70vh;
 }
-#etp-david{
+.right-cutscene{
     position: absolute;
     right: 0;
     animation: cutscene-right 2.8s ease-out forwards;
 }
-#etp-cops{
+.left-cutscene{
     position: relative;
     left: 5vh;
     animation: cutscene-left 2.8s ease-out forwards;
@@ -307,4 +306,64 @@ a{
     background: #ffffff;
     position: absolute;
     bottom: 15.5vh;
+}
+#logout {
+    position: absolute;
+    bottom: 5vh;
+    right: 5vh;
+    background-color: #884141;
+    color: white;
+    font-size: 2.5vh;
+    padding: 1.5vh 3vh;
+    border: none;
+    border-radius: 1vh;
+    cursor: pointer;
+    display: flex;
+    z-index: 1000;
+    font-family: 'Mulish', sans-serif;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#logout:hover {
+    background-color: #602121;
+    transform: scale(1.05);
+}
+#logout-wrapper{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+#logout-ui{
+    display: flex;
+    position: absolute;
+    background: #dee4e5;
+    width: 70vh;
+    height: 30vh;
+    justify-content: center;
+    border-radius: 5vh;
+    padding: 5vh;
+    box-sizing: border-box;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Mulish', sans-serif;
+}
+#complete-logout{
+    font-size: 25px;
+    width: 18vh;
+    height: 6vh;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px -3px;
+    position: absolute;
+    display:grid;
+    justify-content: center;
+    align-content: center;
+    bottom: 5vh;
+    cursor: pointer;
+}
+#std, #ita, #ftc{
+    display: none;
 }
